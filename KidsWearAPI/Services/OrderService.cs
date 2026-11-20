@@ -172,6 +172,7 @@ namespace KidsWearAPI.Services
             return MapOrder(order);
         }
 
+
         public async Task<bool> CancelOrder(int userId, int orderId)
         {
             var order = await _context.Orders
@@ -186,22 +187,28 @@ namespace KidsWearAPI.Services
             if (order.OrderStatus != "Pending")
                 return false;
 
-            var productIds = order.OrderItems
-                .Select(item => item.ProductId)
-                .ToList();
+            
+            if (order.PaymentMethod == "OnlinePayment" &&
+                order.PaymentStatus == "Success")
+                return false;
 
-            var products = await _context.Products
-                .Where(p => productIds.Contains(p.ProductId))
-                .ToListAsync();
-
-            foreach (var item in order.OrderItems)
+            if (order.PaymentMethod == "CashOnDelivery")
             {
-                var product = products.FirstOrDefault(
-                    p => p.ProductId == item.ProductId);
+                var productIds = order.OrderItems
+                    .Select(item => item.ProductId)
+                    .Distinct()
+                    .ToList();
 
-                if (product != null)
+                var products = await _context.Products
+                    .Where(p => productIds.Contains(p.ProductId))
+                    .ToDictionaryAsync(p => p.ProductId);
+
+                foreach (var item in order.OrderItems)
                 {
-                    product.Stock += item.Quantity;
+                    if (products.TryGetValue(item.ProductId, out var product))
+                    {
+                        product.Stock += item.Quantity;
+                    }
                 }
             }
 
@@ -211,6 +218,7 @@ namespace KidsWearAPI.Services
 
             return true;
         }
+
 
         private static OrderResponse MapOrder(Order order)
         {

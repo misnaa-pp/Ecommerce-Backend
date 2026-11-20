@@ -1,6 +1,4 @@
 ﻿
-using System.Net;
-
 namespace KidsWearAPI.Middlewares
 {
     public class GlobalExceptionMiddleware
@@ -22,31 +20,39 @@ namespace KidsWearAPI.Middlewares
             {
                 await _next(context);
             }
-
             catch (Exception ex)
             {
+                _logger.LogError(
+                    ex,
+                    "An unexpected error occurred while processing {Method} {Path}",
+                    context.Request.Method,
+                    context.Request.Path
+                );
+
+                if (context.Response.HasStarted)
+                {
+                    throw;
+                }
+
+                context.Response.Clear();
                 context.Response.ContentType = "application/json";
 
-                if (ex is ArgumentException)
-                {
-                    context.Response.StatusCode =
-                        StatusCodes.Status400BadRequest;
-                }
-                else
-                {
-                    context.Response.StatusCode =
-                        StatusCodes.Status500InternalServerError;
-                }
+                var statusCode = ex is ArgumentException
+                    ? StatusCodes.Status400BadRequest
+                    : StatusCodes.Status500InternalServerError;
+
+                context.Response.StatusCode = statusCode;
 
                 var response = new
                 {
-                    message = ex.Message
+                    status = statusCode,
+                    message = statusCode == 400
+                        ? "Invalid request."
+                        : "An unexpected error occurred. Please try again later."
                 };
 
                 await context.Response.WriteAsJsonAsync(response);
             }
-
         }
     }
 }
-

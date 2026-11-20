@@ -195,7 +195,8 @@ namespace KidsWearAPI.Services
             if (!isValidTransition)
                 return "InvalidTransition";
 
-            if (status == "Cancelled")
+            if (status == "Cancelled" &&
+    order.PaymentMethod == "CashOnDelivery")
             {
                 var productIds = order.OrderItems
                     .Select(item => item.ProductId)

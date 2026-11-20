@@ -127,6 +127,10 @@ namespace KidsWearAPI.Services
             if (order == null)
                 return null;
 
+            if (order.OrderStatus != "Pending")
+                throw new InvalidOperationException(
+                    "This order has been cancelled and cannot be paid.");
+
             await _context.Entry(order)
                 .Collection(o => o.OrderItems)
                 .LoadAsync();

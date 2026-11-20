@@ -31,6 +31,10 @@ namespace KidsWearAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<User>()
+                .HasIndex(u => u.Email)
+                .IsUnique();
+
             modelBuilder.Entity<Wishlist>()
                 .HasOne(w => w.User)
                 .WithMany()
