@@ -1,0 +1,94 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c1c4416b-06a2-42b4-9cec-2421503641ce</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\Images\Baby Dress.jpg" />
+    <Content Remove="wwwroot\Images\black and white set.jpg" />
+    <Content Remove="wwwroot\Images\Black check.jpg" />
+    <Content Remove="wwwroot\Images\Blue Striped Shirt.jpg" />
+    <Content Remove="wwwroot\Images\Bow frock.jpg" />
+    <Content Remove="wwwroot\Images\Boys cord-set.jpg" />
+    <Content Remove="wwwroot\Images\Boys Outfitt.jpg" />
+    <Content Remove="wwwroot\Images\boys shirt set.jpg" />
+    <Content Remove="wwwroot\Images\Brown Gown.jpg" />
+    <Content Remove="wwwroot\Images\Casual Boys Aesthetic Outfit.jpg" />
+    <Content Remove="wwwroot\Images\Check outfit.jpg" />
+    <Content Remove="wwwroot\Images\Chic Minimalist Baby.jpg" />
+    <Content Remove="wwwroot\Images\Cream-Ruffle Cord Set.jpg" />
+    <Content Remove="wwwroot\Images\Cute Beige Baby Outfit.jpg" />
+    <Content Remove="wwwroot\Images\Cute frock.jpg" />
+    <Content Remove="wwwroot\Images\Denim Gown.jpg" />
+    <Content Remove="wwwroot\Images\Denim Ruffle Girls Set.jpg" />
+    <Content Remove="wwwroot\Images\Elegant Neutral Kids Outfit.jpg" />
+    <Content Remove="wwwroot\Images\floral-Embroidery.jpg" />
+    <Content Remove="wwwroot\Images\Girls Navy Blue Ruffle Jumpsuit.jpg" />
+    <Content Remove="wwwroot\Images\Green Cord-Set.jpg" />
+    <Content Remove="wwwroot\Images\Kids frock.jpg" />
+    <Content Remove="wwwroot\Images\Kids jumpsuit.jpg" />
+    <Content Remove="wwwroot\Images\kids winter dresses.jpg" />
+    <Content Remove="wwwroot\Images\Mini_ Everyday outif.jpg" />
+    <Content Remove="wwwroot\Images\Multi color gown.jpg" />
+    <Content Remove="wwwroot\Images\SHEIN Toddler Boys.jpg" />
+    <Content Remove="wwwroot\Images\Shirt-trouser.jpg" />
+    <Content Remove="wwwroot\Images\Simple Baby Girl Everyday Summer Dress.jpg" />
+    <Content Remove="wwwroot\Images\Stylish Boy Fashion.jpg" />
+    <Content Remove="wwwroot\Images\Toddler Baby Boy Clothes.jpg" />
+    <Content Remove="wwwroot\Images\Trendy Kids Boys Summer Co-Ord Set.jpg" />
+    <Content Remove="wwwroot\Images\Trendy Neutral Baby Summer Dress.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Razorpay" Version="3.3.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\Baby Dress.jpg" />
+    <None Include="wwwroot\Images\black and white set.jpg" />
+    <None Include="wwwroot\Images\Black check.jpg" />
+    <None Include="wwwroot\Images\Blue Striped Shirt.jpg" />
+    <None Include="wwwroot\Images\Bow frock.jpg" />
+    <None Include="wwwroot\Images\Boys cord-set.jpg" />
+    <None Include="wwwroot\Images\Boys Outfitt.jpg" />
+    <None Include="wwwroot\Images\boys shirt set.jpg" />
+    <None Include="wwwroot\Images\Brown Gown.jpg" />
+    <None Include="wwwroot\Images\Casual Boys Aesthetic Outfit.jpg" />
+    <None Include="wwwroot\Images\Check outfit.jpg" />
+    <None Include="wwwroot\Images\Chic Minimalist Baby.jpg" />
+    <None Include="wwwroot\Images\Cream-Ruffle Cord Set.jpg" />
+    <None Include="wwwroot\Images\Cute Beige Baby Outfit.jpg" />
+    <None Include="wwwroot\Images\Cute frock.jpg" />
+    <None Include="wwwroot\Images\Denim Gown.jpg" />
+    <None Include="wwwroot\Images\Denim Ruffle Girls Set.jpg" />
+    <None Include="wwwroot\Images\Elegant Neutral Kids Outfit.jpg" />
+    <None Include="wwwroot\Images\floral-Embroidery.jpg" />
+    <None Include="wwwroot\Images\Girls Navy Blue Ruffle Jumpsuit.jpg" />
+    <None Include="wwwroot\Images\Green Cord-Set.jpg" />
+    <None Include="wwwroot\Images\Kids frock.jpg" />
+    <None Include="wwwroot\Images\Kids jumpsuit.jpg" />
+    <None Include="wwwroot\Images\kids winter dresses.jpg" />
+    <None Include="wwwroot\Images\Mini_ Everyday outif.jpg" />
+    <None Include="wwwroot\Images\Multi color gown.jpg" />
+    <None Include="wwwroot\Images\SHEIN Toddler Boys.jpg" />
+    <None Include="wwwroot\Images\Shirt-trouser.jpg" />
+    <None Include="wwwroot\Images\Simple Baby Girl Everyday Summer Dress.jpg" />
+    <None Include="wwwroot\Images\Stylish Boy Fashion.jpg" />
+    <None Include="wwwroot\Images\Toddler Baby Boy Clothes.jpg" />
+    <None Include="wwwroot\Images\Trendy Kids Boys Summer Co-Ord Set.jpg" />
+    <None Include="wwwroot\Images\Trendy Neutral Baby Summer Dress.jpg" />
+  </ItemGroup>
+
+</Project>
